@@ -1,0 +1,34 @@
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray: #c8c8c8;
+    --color-gray-1: #888888;
+    --color-red: #ff0000;
+    --color-red-1: color-mix(in oklab, var(--color-red) 20%, var(--color-white));
+    --color-yellow: #ffff00;
+    --color-blue: #aaddff;
+
+    --app-title-color: var(--color-white);
+    --app-title-shadow-color: var(--color-black);
+
+    --page-background-color: var(--color-white);
+
+    --card-background-color: var(--color-white);
+    --card-shadow-color: var(--color-gray);
+
+    --color_card_background: var(--color-white);
+
+    --modal-layout-background-color: rgb(255 255 255 / 70%);
+
+    --table-border-color: var(--color-gray-1);
+    --table-row-hover-background-color: var(--color-blue);
+
+    --paginator-active-button-background: var(--color-black);
+    --paginator-active-button-color: var(--color-white);
+
+    --highlight-text-background-color: var(--color-yellow);
+    --highlight-text-color: var(--color-red);
+
+    --table-empty-message-color: var(--color-black);
+    --table-empty-message-background-color: var(--color-red-1);
+}

@@ -1,0 +1,36 @@
+.dialog-layout:has(dialog[open]) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--modal-layout-background-color);
+}
+
+.dialog-window{
+  width: 80%;
+  min-width: 20rem;
+}
+
+.library-field {
+  display: flex;
+  border-bottom: 1px solid var(--table-border-color);
+
+  .field-name {
+    flex: 1;
+    font-weight: bold;
+  }
+
+  .field-content {
+    flex: 5;
+  }
+}
+
+.dialog-buttons {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: flex-end;
+}

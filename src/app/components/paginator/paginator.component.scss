@@ -1,0 +1,24 @@
+.list-paginator {
+    display: flex;
+    gap: .4rem;
+    justify-content: center;
+
+    .button-select-page {
+        margin: 0 .2rem
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .ellipsis {
+        width: 1.4rem;
+        text-align: center;
+    }
+
+    .active-page {
+        background-color: var(--paginator-active-button-background);
+        color: var(--paginator-active-button-color);
+    }
+}
