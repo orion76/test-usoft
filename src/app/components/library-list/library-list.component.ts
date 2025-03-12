@@ -1,7 +1,7 @@
 import { Component, computed, inject, signal, ViewEncapsulation } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
-import { catchError, combineLatestWith, filter, map, Observable, of, switchMap, tap } from 'rxjs';
+import { catchError, combineLatestWith, map, Observable, of, switchMap, tap } from 'rxjs';
 import { HighlightTextDirective } from '../../directives/highlight-text.directive';
 import { DataService } from '../../services/data.service';
 import { LoadingService } from '../../services/loader/loader.service';
@@ -75,8 +75,6 @@ export class LibraryListComponent {
   highlightText = signal<string>('')
   currentPage = signal<number>(1)
 
-  currentPage$ = toObservable(this.currentPage);
-
   data$: Observable<IDatasetRecord[]> = toObservable(this.searchText).pipe(
     // filter(Boolean),
     tap(() => this.loader.loadingOn()),
@@ -85,7 +83,7 @@ export class LibraryListComponent {
       this.totalItems.set(data.length);
       this.currentPage.set(1);
     }),
-    combineLatestWith(this.currentPage$),
+    combineLatestWith(toObservable(this.currentPage)),
     map<any, IDatasetRecord[]>(([data, pageNumber]) => {
       const _pageNumber = pageNumber > 0 ? pageNumber - 1 : 0;
       const start = _pageNumber * this.ITEMS_PER_PAGE;

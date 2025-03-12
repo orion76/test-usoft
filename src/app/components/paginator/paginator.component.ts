@@ -92,9 +92,10 @@ export class PaginatorComponent implements OnInit {
         }
 
         if (place === 'right') {
-            return arrayRange(pagesCount - this.BUTTONS_COUNT, pagesCount);
+            const start = pagesCount > this.BUTTONS_COUNT ? pagesCount - this.BUTTONS_COUNT : 1;
+            return arrayRange(start, pagesCount);
         }
-
+      
         return arrayRange(currentPage - diff, currentPage + diff);
     })
 
